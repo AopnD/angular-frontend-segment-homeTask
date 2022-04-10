@@ -1,0 +1,56 @@
+<div class="mainDiv"> 
+    <table class="content-table">
+        <thead>
+        <tr>
+            <th>
+                drag btn
+            </th>
+            <th>
+            name
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                email
+            </th>
+            <th>
+                phone
+            </th>
+            <th>
+                website
+            </th>
+        </tr>
+    </thead>
+    <tbody cdkDropList (cdkDropListDropped)="drop($event)">
+ <tr 
+ cdkDrag
+ cdkDropLockAxis="y"
+ *ngFor ="let user of _fetchService.userData">
+ <td cdkDragHandle>
+    Drag
+ </td>
+ <ng-container>
+        <td (mousedown)="rowClick(user?.id)" >
+        {{user?.name}} 
+     </td>
+     <td >
+            {{user?.username}}
+     </td>
+     <td >
+         {{user?.email}}
+     </td>
+     <td>
+         {{user?.phone}}
+     </td>
+     <td>
+         {{user?.website}}
+     </td>
+    </ng-container>
+ </tr>
+    </tbody>
+</table>
+
+<app-users-info *ngIf="showInfo" (toggleInfoModal)="toggleInfoModalFunc()" [user]="this._fetchService.userCompAndAddressData"></app-users-info>
+
+</div> 
