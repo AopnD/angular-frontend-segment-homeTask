@@ -1,4 +1,3 @@
-import { userInterface } from './../../interfaces/user.interface';
 import { userDataInterface } from './../../interfaces/userData.interface';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FetchServiceService } from 'src/app/services/fetch-service.service';

@@ -31,19 +31,25 @@
     Drag
  </td>
  <ng-container>
+     
+    //*********
+     //i know there is repetitive coding here...however i couldnt 
+     //make the func run on the ng-container for some reason. so this is my best solution at the moment.
+     //********
+
         <td (mousedown)="rowClick(user?.id)" >
         {{user?.name}} 
      </td>
-     <td >
+     <td (mousedown)="rowClick(user?.id)">
             {{user?.username}}
      </td>
-     <td >
+     <td (mousedown)="rowClick(user?.id)">
          {{user?.email}}
      </td>
-     <td>
+     <td (mousedown)="rowClick(user?.id)">
          {{user?.phone}}
      </td>
-     <td>
+     <td (mousedown)="rowClick(user?.id)">
          {{user?.website}}
      </td>
     </ng-container>
